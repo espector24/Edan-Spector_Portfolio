@@ -12,10 +12,20 @@ about:
       href: https://github.com/espector24
 ---
 
-This is a Quarto website.
+Edan Spector is a full time students at California State University Monterey Bay with a Marine Science Major and a Statistics Minor. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Education
 
-```{r}
-1 + 1
-```
+California State University -- Monterey Bay | Monterey, CA
+B.S. in Marine Science | expected graduation Dec 2026
+
+## Experience
+
+Moss Landing Marine Laboratories | Research Intern | Sept 2025 - Present
+
+CSUMB | Student Instructional Leader -- BIO 211 | Jan 2025 - Present 
+
+California Killer Whale Project | Research Intern | Sept 2024 - Dec 2024
+
+CSUMB | Instructional Student Assistant -- STAT 250 | Aug 2024 - Dec 2025
+ 
