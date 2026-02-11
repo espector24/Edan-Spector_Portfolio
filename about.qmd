@@ -2,8 +2,8 @@
 title: "About"
 ---
 
-About this site
+About Edan:
 
-```{r}
-1 + 1
-```
+My name is Edan Spector and I'm a fourth year Marine Science student, with a Statistics minor. I'm passionate about life sciences, specifically Marine Mammal conservation and behavioral sciences.
+
+I'm currently a research and Stranding Intern with Moss Landing Marine Laboratory's Vertebrate Ecology Lab, a CRLA certified peer tutor and a full time student as I continue to navigate this thing we call life.
