@@ -1,5 +1,15 @@
 ---
-title: "Edan-Spector_Portfolio"
+title: "Edan Spector"
+about:
+  template: jolla
+  image: GIT-pfp.jpg
+  links:
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/edan-spector-31a0b5302/
+    - icon: github
+      text: Github
+      href: https://github.com/espector24
 ---
 
 This is a Quarto website.
