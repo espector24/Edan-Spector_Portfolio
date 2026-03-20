@@ -35,13 +35,15 @@ fish <- read.csv("data/SD001--2025.csv")
 
 1.  What do you want your final visualizations to look like?
 
-> I would like to make a boxplot comparing size across multiple states or species.
+> I would like to make a boxplot comparing size across multiple states or species. I may also create a linear regression seaking to see if there's any predictive power in weight based on length.
 
 2.  What do you want to highlight on your final visualizations in order to answer your research questions? How do you plan to do that?
 
-> 
+> I want to make important comparisons that might help in answer questions related to conservation or would aid in understanding the differences in species across areas. I'd want  to highlight size differences and I definitely plan to include species and states throughout my analyses and visualizations.
 
 3.  What is missing from your data or would need to change in your data to create these visualizations
+
+> I have many NAs throughout my data set and this would need to be cleaned before I begin anything. I also thought about creating a new variable of the ratio between weight and length (kg/mm).
 
 ## Data Cleaning
 
@@ -49,26 +51,38 @@ The answer to at least three of these questions should be “YES” for the data
 
 1.  Do you need to reformat any variables into different types (e.g. factors, time, dates, strings)? Or remove information from variable values?   
 
-> 
+> **no**
 
 2.  Do you need to deal with any missing data, especially missing data coded other than NA?    
 
-
+> **yes**, mostly NAs but also many variables that have minimal rows filled out and are therefore useless.
 
 3.  Do you need to filter your data? How?   
 
+> **no** 
 
+4.  Do you need to create any new variables? What variables? How?
 
-4.  Do you need to create any new variables? What variables? How?    
+> **yes** I would like to create a new variable that is a ratio between two other variables being weight and length of the fish.
 
-5.  Do you need to add new data (join) to your data? What data? How?   
-6.  Do you need pivot your data in any way? Why? How?   
+5.  Do you need to add new data (join) to your data? What data? How?\
 
-7.  Do you need to summarize any of the variables? Which ones? How?   
+> **maybe**, I would be willing to add some more fish species to my data as I know that the RecFIN website has more information and I could join the two to make a larger dataframe with a larger sample size overall.
+
+6.  Do you need pivot your data in any way? Why? How? 
+
+> **No**
+
+7.  Do you need to summarize any of the variables? Which ones? How?
+
+> **Yes** I would like to summarize count of each fish, grouped by species.
 
 8.  What other aspects of your data need to be “fixed” in order to make your data visualizations?    
 
+> I don't think anything else in my data needs to be fixed thus far.
 
 Most will answer yes to the following for making your programming more efficient using select(), but you should have three other yeses above.
 
 9. Are there any variables you can exclude from your data?
+
+> **Yes**, there are many variables that have insufficient data that I would not need to use and can therefore select out of my data frame.
