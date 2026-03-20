@@ -1,0 +1,74 @@
+---
+title: "Portfolio Part 1"
+author: "Edan Spector"
+---
+
+## Data Description
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+fish <- read.csv("data/SD001--2025.csv")
+```
+
+
+1.  Identify your data source.
+
+> I got my data from the Recreational Fisheries Network official website, or "RecFIN". 
+
+2.  Describe your data, including variables and data types.
+
+> My data includes variables like fish species name, weight in kilograms, length in millimeters, and many other variables. Most of the variables I want to focus on are numeric continuous with the eexception of variables like species and state the sample is taken (all along the west coast).
+
+3.  Identify the research questions you want to answer.
+
+> Are larger species concentrated in specific states making them more suseptible/vulnerable to overfishing?
+> Can species weight be predicted based on it's length?
+> What is the relationship between length and weight across species?
+> How does species size vary across West Coast States?
+
+
+## Data Visualization
+
+1.  What do you want your final visualizations to look like?
+
+> I would like to make a boxplot comparing size across multiple states or species.
+
+2.  What do you want to highlight on your final visualizations in order to answer your research questions? How do you plan to do that?
+
+> 
+
+3.  What is missing from your data or would need to change in your data to create these visualizations
+
+## Data Cleaning
+
+The answer to at least three of these questions should be “YES” for the data to meet the necessary standards to demonstrate your cleaning. Your data source should not be an already perfectly prepared data set.
+
+1.  Do you need to reformat any variables into different types (e.g. factors, time, dates, strings)? Or remove information from variable values?   
+
+> 
+
+2.  Do you need to deal with any missing data, especially missing data coded other than NA?    
+
+
+
+3.  Do you need to filter your data? How?   
+
+
+
+4.  Do you need to create any new variables? What variables? How?    
+
+5.  Do you need to add new data (join) to your data? What data? How?   
+6.  Do you need pivot your data in any way? Why? How?   
+
+7.  Do you need to summarize any of the variables? Which ones? How?   
+
+8.  What other aspects of your data need to be “fixed” in order to make your data visualizations?    
+
+
+Most will answer yes to the following for making your programming more efficient using select(), but you should have three other yeses above.
+
+9. Are there any variables you can exclude from your data?
