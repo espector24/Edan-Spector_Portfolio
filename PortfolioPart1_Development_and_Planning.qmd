@@ -115,6 +115,11 @@ species_count <- all |>
 
 
 ```{r}
-
+species_count |> 
+  ggplot(mapping = aes(x = reorder(species_name, count), y= count)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = "Fish Species",
+       y = "Count")
 ```
 
