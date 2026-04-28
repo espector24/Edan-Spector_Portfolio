@@ -7,11 +7,13 @@ author: "Edan Spector"
 
 ```{r}
 library(tidyverse)
+library(janitor)
 ```
 
 
 ```{r}
-fish <- read.csv("data/SD001--2025.csv")
+fish1 <- read.csv("data-raw/SD001--2025.csv")
+fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
 ```
 
 
@@ -86,3 +88,33 @@ Most will answer yes to the following for making your programming more efficient
 9. Are there any variables you can exclude from your data?
 
 > **Yes**, there are many variables that have insufficient data that I would not need to use and can therefore select out of my data frame.
+
+```{r}
+fish1 <- fish1 |> 
+  clean_names()
+fish2 <- fish2 |> 
+  clean_names()
+
+fish1_clean <- fish1 |> 
+  select(recfin_imputed_weight_kg, recfin_length_mm, species_name) |> 
+  mutate(ratio = recfin_imputed_weight_kg/recfin_length_mm) |> 
+  drop_na()
+
+fish2_clean <- fish2 |> 
+  select(recfin_imputed_weight_kg, recfin_length_mm, species_name) |> 
+  mutate(ratio = recfin_imputed_weight_kg/recfin_length_mm) |> 
+  drop_na()
+species_count <- fish2_clean 
+  
+
+all <- bind_rows(fish1_clean, fish2_clean)
+
+species_count <- all |> 
+  count(species_name, name = "count")
+```
+
+
+```{r}
+
+```
+
