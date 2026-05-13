@@ -6,6 +6,7 @@ author: "Edan Spector"
 ## Data Description
 
 ```{r}
+#| include: false
 library(tidyverse)
 library(janitor)
 ```
@@ -13,6 +14,7 @@ library(janitor)
 
 ```{r}
 fish1 <- read.csv("data-raw/SD001--2025.csv")
+mortality <- read.csv("data-raw/CTE002-2025.csv")
 fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
 ```
 
@@ -112,6 +114,14 @@ all <- bind_rows(fish1_clean, fish2_clean)
 species_count <- all |> 
   count(species_name, name = "count")
 ```
+
+```{r}
+all |> 
+  join_by(mortality, species_name == "species")
+```
+
+
+
 
 
 ```{r}

@@ -12,20 +12,76 @@ about:
       href: https://github.com/espector24
 ---
 
-Edan Spector is a full time students at California State University Monterey Bay with a Marine Science Major and a Statistics Minor. 
+Edan Spector is a full time students at California State University Monterey Bay with a Marine Science Major and a Statistics Minor.
 
 ## Education
 
-California State University -- Monterey Bay | Monterey, CA
-B.S. in Marine Science | expected graduation Dec 2026
+California State University -- Monterey Bay \| Monterey, CA B.S. in Marine Science \| expected graduation Dec 2026
 
 ## Experience
 
-Moss Landing Marine Laboratories | Research Intern | Sept 2025 - Present
+Moss Landing Marine Laboratories \| Research Intern \| Sept 2025 - Present
 
-CSUMB | Student Instructional Leader -- BIO 211 | Jan 2025 - Present 
+CSUMB \| Student Instructional Leader -- BIO 211 \| Jan 2025 - Present
 
-California Killer Whale Project | Research Intern | Sept 2024 - Dec 2024
+California Killer Whale Project \| Research Intern \| Sept 2024 - Dec 2024
 
-CSUMB | Instructional Student Assistant -- STAT 250 | Aug 2024 - Dec 2025
- 
+CSUMB \| Instructional Student Assistant -- STAT 250 \| Aug 2024 - Dec 2025
+
+## Final Portfolio Item
+
+```{r}
+#| include: false
+library(tidyverse)
+library(janitor)
+```
+
+
+```{r}
+#| include: false
+fish1 <- read.csv("data-raw/SD001--2025.csv")
+mortality <- read.csv("data-raw/CTE002-2025.csv")
+fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
+```
+
+```{r}
+#| include: false
+fish1 <- fish1 |> 
+  clean_names()
+fish2 <- fish2 |> 
+  clean_names()
+
+fish1_clean <- fish1 |> 
+  select(recfin_imputed_weight_kg, recfin_length_mm, species_name) |> 
+  mutate(ratio = recfin_imputed_weight_kg/recfin_length_mm) |> 
+  drop_na()
+
+fish2_clean <- fish2 |> 
+  select(recfin_imputed_weight_kg, recfin_length_mm, species_name) |> 
+  mutate(ratio = recfin_imputed_weight_kg/recfin_length_mm) |> 
+  drop_na()
+species_count <- fish2_clean 
+  
+
+all <- bind_rows(fish1_clean, fish2_clean)
+
+species_count <- all |> 
+  count(species_name, name = "count")
+```
+
+```{r}
+#| include: false
+all |> 
+  join_by(mortality, species_name == "species")
+```
+
+```{r}
+species_count |> 
+  ggplot(mapping = aes(x = reorder(species_name, count), y= count,
+                       fill = species_name)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = "Fish Species",
+       y = "Count",
+       fill = "Species Name")
+```
