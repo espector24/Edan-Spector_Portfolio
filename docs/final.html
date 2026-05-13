@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Edan Spector">
 
-<title>Portfolio Part 1 – Edan-Spector_Portfolio</title>
+<title>Final Portfolio – Edan-Spector_Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -152,9 +116,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-description" id="toc-data-description" class="nav-link active" data-scroll-target="#data-description">Data Description</a></li>
-  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
-  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
+  <li><a href="#final-portfolio-item" id="toc-final-portfolio-item" class="nav-link active" data-scroll-target="#final-portfolio-item">Final Portfolio Item</a>
+  <ul class="collapse">
+  <li><a href="#plot-1" id="toc-plot-1" class="nav-link" data-scroll-target="#plot-1">Plot 1</a></li>
+  <li><a href="#plot-2" id="toc-plot-2" class="nav-link" data-scroll-target="#plot-2">Plot 2</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -163,19 +129,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Portfolio Part 1</h1>
+<h1 class="title">Final Portfolio</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Edan Spector </p>
-          </div>
-  </div>
     
   
     
@@ -186,166 +146,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="data-description" class="level2">
-<h2 class="anchored" data-anchor-id="data-description">Data Description</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fish1 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data-raw/SD001--2025.csv"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mortality <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data-raw/CTE002-2025.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in read.table(file = file, header = header, sep = sep, quote = quote, :
-incomplete final line found by readTableHeader on 'data-raw/CTE002-2025.csv'</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fish2 <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"data-raw/SD001-CALIFORNIA-2025.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ol type="1">
-<li>Identify your data source.</li>
-</ol>
-<blockquote class="blockquote">
-<p>I got my data from the Recreational Fisheries Network official website, or “RecFIN”.</p>
-</blockquote>
-<ol start="2" type="1">
-<li>Describe your data, including variables and data types.</li>
-</ol>
-<blockquote class="blockquote">
-<p>My data includes variables like fish species name, weight in kilograms, length in millimeters, and many other variables. Most of the variables I want to focus on are numeric continuous with the eexception of variables like species and state the sample is taken (all along the west coast).</p>
-</blockquote>
-<ol start="3" type="1">
-<li>Identify the research questions you want to answer.</li>
-</ol>
-<blockquote class="blockquote">
-<p>Are larger species concentrated in specific states making them more suseptible/vulnerable to overfishing? Can species weight be predicted based on it’s length? What is the relationship between length and weight across species? How does species size vary across West Coast States?</p>
-</blockquote>
-</section>
-<section id="data-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="data-visualization">Data Visualization</h2>
-<ol type="1">
-<li>What do you want your final visualizations to look like?</li>
-</ol>
-<blockquote class="blockquote">
-<p>I would like to make a boxplot comparing size across multiple states or species. I may also create a linear regression seaking to see if there’s any predictive power in weight based on length.</p>
-</blockquote>
-<ol start="2" type="1">
-<li>What do you want to highlight on your final visualizations in order to answer your research questions? How do you plan to do that?</li>
-</ol>
-<blockquote class="blockquote">
-<p>I want to make important comparisons that might help in answer questions related to conservation or would aid in understanding the differences in species across areas. I’d want to highlight size differences and I definitely plan to include species and states throughout my analyses and visualizations.</p>
-</blockquote>
-<ol start="3" type="1">
-<li>What is missing from your data or would need to change in your data to create these visualizations</li>
-</ol>
-<blockquote class="blockquote">
-<p>I have many NAs throughout my data set and this would need to be cleaned before I begin anything. I also thought about creating a new variable of the ratio between weight and length (kg/mm).</p>
-</blockquote>
-</section>
-<section id="data-cleaning" class="level2">
-<h2 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h2>
-<p>The answer to at least three of these questions should be “YES” for the data to meet the necessary standards to demonstrate your cleaning. Your data source should not be an already perfectly prepared data set.</p>
-<ol type="1">
-<li>Do you need to reformat any variables into different types (e.g.&nbsp;factors, time, dates, strings)? Or remove information from variable values?</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>no</strong></p>
-</blockquote>
-<ol start="2" type="1">
-<li>Do you need to deal with any missing data, especially missing data coded other than NA?</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>yes</strong>, mostly NAs but also many variables that have minimal rows filled out and are therefore useless.</p>
-</blockquote>
-<ol start="3" type="1">
-<li>Do you need to filter your data? How?</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>no</strong></p>
-</blockquote>
-<ol start="4" type="1">
-<li>Do you need to create any new variables? What variables? How?</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>yes</strong> I would like to create a new variable that is a ratio between two other variables being weight and length of the fish.</p>
-</blockquote>
-<ol start="5" type="1">
-<li>Do you need to add new data (join) to your data? What data? How?<br>
-</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>maybe</strong>, I would be willing to add some more fish species to my data as I know that the RecFIN website has more information and I could join the two to make a larger dataframe with a larger sample size overall.</p>
-</blockquote>
-<ol start="6" type="1">
-<li>Do you need pivot your data in any way? Why? How?</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>No</strong></p>
-</blockquote>
-<ol start="7" type="1">
-<li>Do you need to summarize any of the variables? Which ones? How?</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>Yes</strong> I would like to summarize count of each fish, grouped by species.</p>
-</blockquote>
-<ol start="8" type="1">
-<li>What other aspects of your data need to be “fixed” in order to make your data visualizations?</li>
-</ol>
-<blockquote class="blockquote">
-<p>I don’t think anything else in my data needs to be fixed thus far.</p>
-</blockquote>
-<p>Most will answer yes to the following for making your programming more efficient using select(), but you should have three other yeses above.</p>
-<ol start="9" type="1">
-<li>Are there any variables you can exclude from your data?</li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>Yes</strong>, there are many variables that have insufficient data that I would not need to use and can therefore select out of my data frame.</p>
-</blockquote>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fish1 <span class="ot">&lt;-</span> fish1 <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fish2 <span class="ot">&lt;-</span> fish2 <span class="sc">|&gt;</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>fish1_clean <span class="ot">&lt;-</span> fish1 <span class="sc">|&gt;</span> </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(recfin_imputed_weight_kg, recfin_length_mm, species_name) <span class="sc">|&gt;</span> </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ratio =</span> recfin_imputed_weight_kg<span class="sc">/</span>recfin_length_mm) <span class="sc">|&gt;</span> </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>fish2_clean <span class="ot">&lt;-</span> fish2 <span class="sc">|&gt;</span> </span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(recfin_imputed_weight_kg, recfin_length_mm, species_name) <span class="sc">|&gt;</span> </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ratio =</span> recfin_imputed_weight_kg<span class="sc">/</span>recfin_length_mm) <span class="sc">|&gt;</span> </span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>species_count <span class="ot">&lt;-</span> fish2_clean </span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>all <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(fish1_clean, fish2_clean)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>species_count <span class="ot">&lt;-</span> all <span class="sc">|&gt;</span> </span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species_name, <span class="at">name =</span> <span class="st">"count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>all <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">join_by</span>(mortality, species_name <span class="sc">==</span> <span class="st">"species"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Join By:
-- all
-- mortality
-- species_name == "species"</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>species_count <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(species_name, count), <span class="at">y=</span> count)) <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Fish Species"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
+<section id="final-portfolio-item" class="level2">
+<h2 class="anchored" data-anchor-id="final-portfolio-item">Final Portfolio Item</h2>
+<section id="plot-1" class="level3">
+<h3 class="anchored" data-anchor-id="plot-1">Plot 1</h3>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="PortfolioPart1_Development_and_Planning_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plot1.png" class="img-fluid figure-img"></p>
+<figcaption>amount of fish by species</figcaption>
 </figure>
 </div>
-</div>
+</section>
+<section id="plot-2" class="level3">
+<h3 class="anchored" data-anchor-id="plot-2">Plot 2</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="plot2.png" class="img-fluid figure-img"></p>
+<figcaption>rockfish retained vs released dead</figcaption>
+</figure>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

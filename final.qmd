@@ -1,0 +1,101 @@
+---
+title: "Final Portfolio"
+---
+
+## Final Portfolio Item
+
+```{r}
+#| include: false
+library(tidyverse)
+library(janitor)
+```
+
+
+```{r}
+#| include: false
+fish1 <- read.csv("data-raw/SD001--2025.csv")
+mortality <- read.csv("data-raw/CTE002-2025.csv")
+fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
+```
+
+```{r}
+#| include: false
+fish1 <- fish1 |> 
+  clean_names()
+fish2 <- fish2 |> 
+  clean_names()
+
+fish1_clean <- fish1 |> 
+  select(recfin_imputed_weight_kg, recfin_length_mm, species_name) |> 
+  mutate(ratio = recfin_imputed_weight_kg/recfin_length_mm) |> 
+  drop_na()
+
+fish2_clean <- fish2 |> 
+  select(recfin_imputed_weight_kg, recfin_length_mm, species_name) |> 
+  mutate(ratio = recfin_imputed_weight_kg/recfin_length_mm) |> 
+  drop_na()
+species_count <- fish2_clean 
+  
+
+all <- bind_rows(fish1_clean, fish2_clean)
+
+species_count <- all |> 
+  count(species_name, name = "count")
+```
+
+```{r}
+#| include: false
+
+mortality <- mortality |> 
+  clean_names() 
+```
+### Plot 1
+```{r}
+#| include: false
+species_count |> 
+  ggplot(mapping = aes(x = reorder(species_name, count), y= count,
+                       fill = species_name)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = "Fish Species",
+       y = "Count",
+       fill = "Species Name")
+ggsave("plot1.png")
+```
+
+![amount of fish by species](plot1.png)
+
+### Plot 2
+```{r}
+#| include: false
+mort_long <- mortality |> 
+  select(species, california_retained_num, california_released_dead_num, oregon_retained_num, oregon_released_dead_num) |> 
+  pivot_longer(
+    cols = -species,
+    names_to = "type",
+    values_to = "count") |> 
+  mutate(state = if_else(str_detect(type, "california"), "California", "Oregon"),
+    outcome = case_when(
+      str_detect(type, "released_dead") ~ "Released Dead",
+      str_detect(type, "retained") ~ "Retained"
+    )
+  )
+```
+
+```{r}
+#| include: false
+mort_long |> 
+  ggplot(aes(x = species, y = count, fill = outcome)) +
+  geom_col() +
+  scale_y_continuous(
+    labels = scales::comma,
+    breaks = scales::pretty_breaks(n = 10)
+  ) +
+  labs(x = "Rockfish Species",
+       y = "Number of Rockfish",
+       fill = "Outcome",
+       title = "Rockfish Outcomes by Species and State")
+ggsave("plot2.png")
+```
+
+![rockfish retained vs released dead](plot2.png)

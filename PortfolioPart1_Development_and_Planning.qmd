@@ -11,17 +11,15 @@ library(tidyverse)
 library(janitor)
 ```
 
-
 ```{r}
 fish1 <- read.csv("data-raw/SD001--2025.csv")
 mortality <- read.csv("data-raw/CTE002-2025.csv")
 fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
 ```
 
-
 1.  Identify your data source.
 
-> I got my data from the Recreational Fisheries Network official website, or "RecFIN". 
+> I got my data from the Recreational Fisheries Network official website, or "RecFIN".
 
 2.  Describe your data, including variables and data types.
 
@@ -29,11 +27,7 @@ fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
 
 3.  Identify the research questions you want to answer.
 
-> Are larger species concentrated in specific states making them more suseptible/vulnerable to overfishing?
-> Can species weight be predicted based on it's length?
-> What is the relationship between length and weight across species?
-> How does species size vary across West Coast States?
-
+> Are larger species concentrated in specific states making them more suseptible/vulnerable to overfishing? Can species weight be predicted based on it's length? What is the relationship between length and weight across species? How does species size vary across West Coast States?
 
 ## Data Visualization
 
@@ -43,7 +37,7 @@ fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
 
 2.  What do you want to highlight on your final visualizations in order to answer your research questions? How do you plan to do that?
 
-> I want to make important comparisons that might help in answer questions related to conservation or would aid in understanding the differences in species across areas. I'd want  to highlight size differences and I definitely plan to include species and states throughout my analyses and visualizations.
+> I want to make important comparisons that might help in answer questions related to conservation or would aid in understanding the differences in species across areas. I'd want to highlight size differences and I definitely plan to include species and states throughout my analyses and visualizations.
 
 3.  What is missing from your data or would need to change in your data to create these visualizations
 
@@ -53,17 +47,17 @@ fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
 
 The answer to at least three of these questions should be “YES” for the data to meet the necessary standards to demonstrate your cleaning. Your data source should not be an already perfectly prepared data set.
 
-1.  Do you need to reformat any variables into different types (e.g. factors, time, dates, strings)? Or remove information from variable values?   
+1.  Do you need to reformat any variables into different types (e.g. factors, time, dates, strings)? Or remove information from variable values?
 
 > **no**
 
-2.  Do you need to deal with any missing data, especially missing data coded other than NA?    
+2.  Do you need to deal with any missing data, especially missing data coded other than NA?
 
 > **yes**, mostly NAs but also many variables that have minimal rows filled out and are therefore useless.
 
-3.  Do you need to filter your data? How?   
+3.  Do you need to filter your data? How?
 
-> **no** 
+> **no**
 
 4.  Do you need to create any new variables? What variables? How?
 
@@ -73,7 +67,7 @@ The answer to at least three of these questions should be “YES” for the data
 
 > **maybe**, I would be willing to add some more fish species to my data as I know that the RecFIN website has more information and I could join the two to make a larger dataframe with a larger sample size overall.
 
-6.  Do you need pivot your data in any way? Why? How? 
+6.  Do you need pivot your data in any way? Why? How?
 
 > **No**
 
@@ -81,13 +75,13 @@ The answer to at least three of these questions should be “YES” for the data
 
 > **Yes** I would like to summarize count of each fish, grouped by species.
 
-8.  What other aspects of your data need to be “fixed” in order to make your data visualizations?    
+8.  What other aspects of your data need to be “fixed” in order to make your data visualizations?
 
 > I don't think anything else in my data needs to be fixed thus far.
 
 Most will answer yes to the following for making your programming more efficient using select(), but you should have three other yeses above.
 
-9. Are there any variables you can exclude from your data?
+9.  Are there any variables you can exclude from your data?
 
 > **Yes**, there are many variables that have insufficient data that I would not need to use and can therefore select out of my data frame.
 
@@ -120,10 +114,6 @@ all |>
   join_by(mortality, species_name == "species")
 ```
 
-
-
-
-
 ```{r}
 species_count |> 
   ggplot(mapping = aes(x = reorder(species_name, count), y= count)) +
@@ -132,4 +122,3 @@ species_count |>
   labs(x = "Fish Species",
        y = "Count")
 ```
-
