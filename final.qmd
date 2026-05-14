@@ -2,7 +2,13 @@
 title: "Final Portfolio"
 ---
 
-## Final Portfolio Item
+## Final Portfolio
+
+### Data Description
+For my project I used data from the Recreational Fisheries Network official website, or [RecFin](https://www.recfin.org/)
+
+### Data Cleaning
+To clean my data, I focused first on making sure all variables were titled the same for continuity purposes. I then selected the specific variables I wanted to work with for the purposes of my project and mutated my data to create a new variable that looked at the ratio between weight and length of Rockfish to gain a general understanding differences between species. I did this with more than one dataset, and then put these two sets together to make it easier to create graphics from both.
 
 ```{r}
 #| include: false
@@ -49,7 +55,9 @@ species_count <- all |>
 mortality <- mortality |> 
   clean_names() 
 ```
-### Plot 1
+### Visualization 1
+This visualization shows the overall count comparison between all fish species in my data set, including Blue Rockfish, Yellowtail Rockfish, Petrale Sole, Kelp Rockfish, and Starry Flounder. Blue Rockfish had the highest count by far while Starry Flounder had close to none by comparison, with Yellowtail Rockfish having the second highest count but not even summing to half of what Blue Rockfish had.
+
 ```{r}
 #| include: false
 species_count |> 
@@ -63,9 +71,11 @@ species_count |>
 ggsave("plot1.png")
 ```
 
-![amount of fish by species](plot1.png)
+![Total count of fish species in California, Oregon, and Washington](plot1.png)
 
-### Plot 2
+### Visualization 2
+My second visualization displays the outcomes of Rockfish species once they're initially caught. The graphic displays how once again, Blue Rockfish by far had the highest amount of catches, as is to be expected with California and Oregon fish. The overall pattern of note is that at least 90% of each of the Rockfish caught were then retained for what could be a number of purposes, be it for food, or for recreation. Kelp Rockfish by far had the lowest count of catches between all three species. This may be due to general lack in abundance, which could be cause for a new research question looking at Rockfish species abundance overall across these states and see if there's a significant difference in these numbers.
+
 ```{r}
 #| include: false
 mort_long <- mortality |> 
@@ -98,4 +108,4 @@ mort_long |>
 ggsave("plot2.png")
 ```
 
-![rockfish retained vs released dead](plot2.png)
+![Rockfish species counts retained vs. released dead in the states California and Oregon](plot2.png)

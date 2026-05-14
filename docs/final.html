@@ -98,7 +98,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./final.html" aria-current="page"> 
+<span class="menu-text">Final Project</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -116,10 +120,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#final-portfolio-item" id="toc-final-portfolio-item" class="nav-link active" data-scroll-target="#final-portfolio-item">Final Portfolio Item</a>
+  <li><a href="#final-portfolio" id="toc-final-portfolio" class="nav-link active" data-scroll-target="#final-portfolio">Final Portfolio</a>
   <ul class="collapse">
-  <li><a href="#plot-1" id="toc-plot-1" class="nav-link" data-scroll-target="#plot-1">Plot 1</a></li>
-  <li><a href="#plot-2" id="toc-plot-2" class="nav-link" data-scroll-target="#plot-2">Plot 2</a></li>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description">Data Description</a></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
+  <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1">Visualization 1</a></li>
+  <li><a href="#visualization-2" id="toc-visualization-2" class="nav-link" data-scroll-target="#visualization-2">Visualization 2</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -146,23 +152,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="final-portfolio-item" class="level2">
-<h2 class="anchored" data-anchor-id="final-portfolio-item">Final Portfolio Item</h2>
-<section id="plot-1" class="level3">
-<h3 class="anchored" data-anchor-id="plot-1">Plot 1</h3>
+<section id="final-portfolio" class="level2">
+<h2 class="anchored" data-anchor-id="final-portfolio">Final Portfolio</h2>
+<section id="data-description" class="level3">
+<h3 class="anchored" data-anchor-id="data-description">Data Description</h3>
+<p>For my project I used data from the Recreational Fisheries Network official website, or <a href="https://www.recfin.org/">RecFin</a></p>
+</section>
+<section id="data-cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h3>
+<p>To clean my data, I focused first on making sure all variables were titled the same for continuity purposes. I then selected the specific variables I wanted to work with for the purposes of my project and mutated my data to create a new variable that looked at the ratio between weight and length of Rockfish to gain a general understanding differences between species. I did this with more than one dataset, and then put these two sets together to make it easier to create graphics from both.</p>
+</section>
+<section id="visualization-1" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-1">Visualization 1</h3>
+<p>This visualization shows the overall count comparison between all fish species in my data set, including Blue Rockfish, Yellowtail Rockfish, Petrale Sole, Kelp Rockfish, and Starry Flounder. Blue Rockfish had the highest count by far while Starry Flounder had close to none by comparison, with Yellowtail Rockfish having the second highest count but not even summing to half of what Blue Rockfish had.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plot1.png" class="img-fluid figure-img"></p>
-<figcaption>amount of fish by species</figcaption>
+<figcaption>Total count of fish species in California, Oregon, and Washington</figcaption>
 </figure>
 </div>
 </section>
-<section id="plot-2" class="level3">
-<h3 class="anchored" data-anchor-id="plot-2">Plot 2</h3>
+<section id="visualization-2" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-2">Visualization 2</h3>
+<p>My second visualization displays the outcomes of Rockfish species once they’re initially caught. The graphic displays how once again, Blue Rockfish by far had the highest amount of catches, as is to be expected with California and Oregon fish. The overall pattern of note is that at least 90% of each of the Rockfish caught were then retained for what could be a number of purposes, be it for food, or for recreation. Kelp Rockfish by far had the lowest count of catches between all three species. This may be due to general lack in abundance, which could be cause for a new research question looking at Rockfish species abundance overall across these states and see if there’s a significant difference in these numbers.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="plot2.png" class="img-fluid figure-img"></p>
-<figcaption>rockfish retained vs released dead</figcaption>
+<figcaption>Rockfish species counts retained vs.&nbsp;released dead in the states California and Oregon</figcaption>
 </figure>
 </div>
 

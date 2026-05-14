@@ -19,7 +19,7 @@ fish2 <-read.csv("data-raw/SD001-CALIFORNIA-2025.csv")
 
 1.  Identify your data source.
 
-> I got my data from the Recreational Fisheries Network official website, or "RecFIN".
+> I got my data from the Recreational Fisheries Network official website, or "Rec Fin".
 
 2.  Describe your data, including variables and data types.
 
